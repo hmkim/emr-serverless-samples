@@ -49,7 +49,7 @@ aws emr-serverless start-job-run \
         "sparkSubmit": {
             "entryPoint": "s3://'${S3_BUCKET}'/code/pyspark/glow_demo.py",
             "entryPointArguments": ["pyspark_glow.tar.gz"],
-            "sparkSubmitParameters": "--conf spark.hadoop.io.compression.codecs=io.projectglow.sql.util.BGZFCodec --conf spark.driver.cores=1 --conf spark.driver.memory=2g --conf spark.executor.cores=3 --conf spark.executor.memory=4g --conf spark.executor.instances=20 --archives=s3://'${S3_BUCKET}'/artifacts/pyspark/glow/pyspark_glow.tar.gz --jars s3://'${S3_BUCKET}'/artifacts/pyspark/glow/glow-spark3-assembly-1.1.2-SNAPSHOT.jar"
+            "sparkSubmitParameters": "--conf spark.hadoop.io.compression.codecs=io.projectglow.sql.util.BGZFCodec --conf spark.driver.cores=1 --conf spark.driver.memory=2g --conf spark.executor.cores=4 --conf spark.executor.memory=4g --conf spark.executor.instances=20 --archives=s3://'${S3_BUCKET}'/artifacts/pyspark/glow/pyspark_glow.tar.gz --jars s3://'${S3_BUCKET}'/artifacts/pyspark/glow/glow-spark3-assembly-1.1.2-SNAPSHOT.jar"
         }
     }' \
     --configuration-overrides '{
